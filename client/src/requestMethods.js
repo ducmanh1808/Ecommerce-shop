@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const BASE_URL = "http://localhost:5000/api/";
+const BASE_URL = "https://ecremmoce.herokuapp.com/api/";
 // const TOKEN = JSON.parse(JSON.parse(localStorage.getItem('persist:root')).user).currentUser.accessToken;
 const TOKEN = localStorage.getItem('persist:root') ? JSON.parse(JSON.parse(localStorage.getItem('persist:root'))?.user).currentUser
 ? JSON.parse(JSON.parse(localStorage.getItem('persist:root')).user)
