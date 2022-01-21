@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { login } from '../redux/apiCalls'
 import { mobile, mobile768 } from '../responsive'
 import { useDispatch, useSelector } from "react-redux"
-import { Link as LinkRouter} from 'react-router-dom'
+import { Link as LinkRouter, useNavigate} from 'react-router-dom'
 
 
 const Container = styled.div`
@@ -86,6 +86,8 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const dispatch = useDispatch();
     const {isFetching, error} = useSelector(state => state.user);
+    const navigate = useNavigate();
+
 
     const handleLogin = (e) => {
         e.preventDefault();
