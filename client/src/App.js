@@ -4,10 +4,8 @@ import Product from './pages/Product';
 import Register from './pages/Register';
 import Login from './pages/Login';
 import Cart from './pages/Cart';
-import ScrollToTop from './components/ScrollToTop'
 import {   BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useSelector } from 'react-redux';
-import AppAdmin from "./admin/src/App"
 
 const App = () => {
   const user = useSelector(state => state.user.currentUser)
@@ -21,7 +19,6 @@ const App = () => {
             <Route path="/Cart/" element={<Cart />} />
             <Route path="/Login" element={user ? <Navigate to="/"/> : <Login />} />
             <Route path="/Register" element={user ? <Navigate to="/"/> : <Register />} />
-            <Route path="/admin" element={<AppAdmin />} />
         </Routes>
     </BrowserRouter>
   )

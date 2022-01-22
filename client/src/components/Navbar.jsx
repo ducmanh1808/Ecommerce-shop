@@ -85,8 +85,9 @@ const Navbar = () => {
     const currentUser = useSelector(state => state.user.currentUser)
     const dispatch = useDispatch();
 
-    const LogOut = () => {
-        dispatch(logOut());
+    const LogOut = async () => {
+        const res = await dispatch(logOut());
+        window.location.reload();
     }
 
     return (
